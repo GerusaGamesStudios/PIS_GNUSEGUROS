@@ -1,0 +1,2 @@
+class proxyBDAutentificacion:
+  pass
