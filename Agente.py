@@ -1,3 +1,2 @@
 class Agente:
-  a=[]
   pass
