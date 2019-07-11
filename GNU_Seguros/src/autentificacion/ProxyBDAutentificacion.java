@@ -33,4 +33,8 @@ public class ProxyBDAutentificacion {
 	public void addCuenta(Cuenta nueva){
 		
 	}
+	
+	public void deleteCuenta(Cuenta a_borrar){
+		
+	}
 }
