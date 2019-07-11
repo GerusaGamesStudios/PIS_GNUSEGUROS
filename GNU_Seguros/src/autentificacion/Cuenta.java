@@ -10,5 +10,22 @@ package autentificacion;
  * @author tealflipper
  */
 public class Cuenta {
+	private String nombre;
+	private String correo;
+	private String contraseña;
+	private String id;
+	
+	
+	public void setNombre(String _nombre){
+		this.nombre=_nombre;
+	}
+	public void setContraseña(String _contraseña){
+		
+	}
+	
+	public void setId(String _id){
+		
+	}
+	
     
 }
