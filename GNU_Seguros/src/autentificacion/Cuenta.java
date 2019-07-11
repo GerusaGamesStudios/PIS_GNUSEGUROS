@@ -20,12 +20,24 @@ public class Cuenta {
 		this.nombre=_nombre;
 	}
 	public void setContraseña(String _contraseña){
-		
+		this.contraseña=_contraseña;
 	}
 	
 	public void setId(String _id){
-		
+		this.id=_id;
 	}
+	
+	public String getNombre(){
+		return this.nombre;
+	} 
+	
+	public String getContraseña(){
+		return this.contraseña;
+	}
+	
+	public String getId(){
+		return this.id;
+	} 
 	
     
 }
