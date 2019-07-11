@@ -10,5 +10,27 @@ package autentificacion;
  * @author tealflipper
  */
 public class ProxyBDAutentificacion {
-    
+    //tablaCuentas sera un arraylist por el momento
+	private ArrayList<Cuenta> tablaCuentas=new ArrayList<Cuenta>();
+	
+	//Las tablas seran arraylist por lo mientras
+	public ArrayList<Cuenta> cargarBD(){
+		return this.tablaCuentas;
+	}
+	
+	public void GuardarBD(){
+		
+	}
+	
+	public Agente getCuentasAgente(){
+		
+	}
+	
+	public Cuenta getCuenta(){
+		
+	}
+	
+	public void addCuenta(Cuenta nueva){
+		
+	}
 }
