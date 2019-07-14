@@ -42,6 +42,7 @@ public class GestorPublicoGeneral {
     }
     
     
+    
     private boolean verificarCorreo(String correo){
         for(int i=0; i<correo.length();i++){
             if(correo.charAt(i)=='@') return true;
