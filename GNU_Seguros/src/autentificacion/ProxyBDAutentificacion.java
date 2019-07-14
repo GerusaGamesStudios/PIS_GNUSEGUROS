@@ -6,6 +6,8 @@
 package autentificacion;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,6 +16,18 @@ import java.util.ArrayList;
 public class ProxyBDAutentificacion {
     //tablaCuentas sera un arraylist por el momento
 	private ArrayList<Cuenta> tablaCuentas=new ArrayList<Cuenta>();
+        
+        public ProxyBDAutentificacion(){
+            Cuenta[] array=new Cuenta[5];
+            array[0]=new Cuenta("jesus","chuy@gmail.com","hammettLover34",null);
+            array[1]=new Cuenta("pedro","Pepe@gmail.com","chitosis79",null);            
+            array[2]=new Cuenta("Juan","jaunillo@gmail.com","extasis",null);
+            array[4]=new Cuenta("Luis","luis@gmail.com","amoamlo69",null);
+            for(int i=0;i<5;i++){
+               tablaCuentas.add(array[i]); 
+            }
+            
+        }
 	
 	//Las tablas seran arraylist por lo mientras
 	public ArrayList<Cuenta> cargarBD(){
@@ -44,7 +58,14 @@ public class ProxyBDAutentificacion {
                     * cotraseña dada
                     */
                     if(this.tablaCuentas.get(i).getContraseña().compareTo(contraseña)==0){
-                        return this.tablaCuentas.get(i);
+                        System.out.println("exito!!");
+                        //un delay de un segundo
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(ProxyBDAutentificacion.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                                    return this.tablaCuentas.get(i);
                     }
                 }else return null;
             }

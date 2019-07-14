@@ -37,6 +37,7 @@ public class GestorPublicoGeneral {
             return null;
         }else{
             BD=Tabla_cuentas.cargarBD();
+            
             return Tabla_cuentas.getCuenta(correo,contraseña);
         }
     }
@@ -73,10 +74,10 @@ public class GestorPublicoGeneral {
             switch(opcion){
                 case(1):
                     System.out.print("Ingresar correo: ");
-                    correo=sc.nextLine();
+                    correo=sc.next();
                     System.out.print("Ingresar contraseña: ");
-                    contraseña=sc.nextLine();
-                    sesion=gestorGen.iniciarSesion(correo,contraseña);
+                    contraseña=sc.next();
+                    sesion=gestorGen.iniciarSesion(correo,contraseña); 
                     break;
                 case(6):
                   continuar=false;

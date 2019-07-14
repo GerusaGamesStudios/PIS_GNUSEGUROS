@@ -15,7 +15,12 @@ public class Cuenta {
 	private String contraseña;
 	private String id;
 	
-	
+	public Cuenta(String nombre,String correo,String contraseña,String id){
+            this.nombre=nombre;
+            this.correo=correo;
+            this.contraseña=contraseña;
+	    this.id=id;
+        }
 	public void setNombre(String _nombre){
             this.nombre=_nombre;
 	}
