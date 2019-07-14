@@ -5,6 +5,8 @@
  */
 package autentificacion;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author tealflipper
@@ -23,10 +25,12 @@ public class ProxyBDAutentificacion {
 	}
 	
 	public Agente getCuentasAgente(){
+            return null;
 		
 	}
 	
 	public Cuenta getCuenta(){
+            return null;
 		
 	}
 	
