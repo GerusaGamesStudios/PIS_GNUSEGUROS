@@ -18,7 +18,6 @@ import java.util.logging.Logger;
 public class GestorPublicoGeneral {
 
     private ProxyBDAutentificacion Tabla_cuentas=new ProxyBDAutentificacion();
-    private ArrayList<Cuenta> BD;
     private Scanner sc=new Scanner(System.in);
 
     public Cuenta iniciarSesion(String correo, String contraseña){
@@ -37,7 +36,6 @@ public class GestorPublicoGeneral {
             //regresa referencia a nulo si no esta la cuenta o contraseña no es la misma
             return null;
         }else{
-            BD=Tabla_cuentas.cargarBD();
 
             return Tabla_cuentas.getCuenta(correo,contraseña);
         }
@@ -49,9 +47,6 @@ public class GestorPublicoGeneral {
         }
         return false;
     }
-
-
-
     public static void main(String [ ] args){
 
         GestorPublicoGeneral gestorGen=new GestorPublicoGeneral();
