@@ -13,9 +13,11 @@ import java.util.logging.Logger;
  *
  * @author tealflipper
  */
-public class ProxyBDAutentificacion {
+//Base de daots sera un archivo de clases
+public class ProxyBDAutentificacion implements java.io.Serializable {
     //tablaCuentas sera un arraylist por el momento
 	private ArrayList<Cuenta> tablaCuentas=new ArrayList<Cuenta>();
+	private String nombreBD="tablaCuentas.ser";
         
         public ProxyBDAutentificacion(){
             Cuenta[] array=new Cuenta[5];
@@ -30,11 +32,68 @@ public class ProxyBDAutentificacion {
         }
 	
 	//Las tablas seran arraylist por lo mientras
+	//Deserializa el objeto
 	public ArrayList<Cuenta> cargarBD(){
-	    return this.tablaCuentas;
+		ArrayList<Cuenta> nueva=null;
+	    try
+        {    
+            // Reading the object from a file 
+            FileInputStream file = new FileInputStream(nombreBD); 
+            ObjectInputStream in = new ObjectInputStream(file); 
+              
+            // Method for deserialization of object 
+            tablaCuentas = (ArrayList<Cuenta>)in.readObject(); 
+              
+            in.close(); 
+            file.close(); 
+              
+            System.out.println("Tabla de Cuentas ha sido cargada."); 
+			try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(GestorPublicoGeneral.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } 
+          
+        catch(IOException ex) 
+        { 
+            System.out.println("IOException is caught"); 
+        } 
+          
+        catch(ClassNotFoundException ex) 
+        { 
+            System.out.println("ClassNotFoundException is caught"); 
+        } 
 	}
 	
+	//serializa el objeto
 	public void GuardarBD(ArrayList<Cuenta> Tabla){
+		try
+        {    
+            //Saving of object in a file 
+            FileOutputStream file = new FileOutputStream(nombreBD); 
+            ObjectOutputStream out = new ObjectOutputStream(file); 
+              
+            // Method for serialization of object 
+            out.writeObject(Tabla); 
+              
+            out.close(); 
+            file.close(); 
+              
+            System.out.println("Tabla de Cuentas ha sido guardada."); 
+			try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(GestorPublicoGeneral.class.getName()).log(Level.SEVERE, null, ex);
+            }
+  
+        } 
+          
+        catch(IOException ex) 
+        { 
+            System.out.println("IOException is caught"); 
+        } 
+		
             this.tablaCuentas=Tabla;
                 
 	}
