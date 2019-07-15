@@ -9,6 +9,10 @@ package autentificacion;
  *
  * @author tealflipper
  */
-public class Cliente {
+public class Cliente extends Cuenta {
+    
+    public Cliente(String nombre, String correo, String contraseña, String id) {
+        super(nombre, correo, contraseña, id);
+    }
     
 }

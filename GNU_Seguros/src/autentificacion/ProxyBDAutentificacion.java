@@ -20,15 +20,16 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
 	private String nombreBD="tablaCuentas.ser";
         
         public ProxyBDAutentificacion(){
-            Cuenta[] array=new Cuenta[5];
-            array[0]=new Cuenta("jesus","chuy@gmail.com","hammettLover34",null);
-            array[1]=new Cuenta("pedro","Pepe@gmail.com","chitosis79",null);            
-            array[2]=new Cuenta("Juan","jaunillo@gmail.com","extasis",null);
-            array[4]=new Cuenta("Luis","luis@gmail.com","amoamlo69",null);
+           
+            /*Cuenta[] array=new Cuenta[5];
+            array[0]=new Admin("jesus","chuy@gmail.com","hammettLover34",null);
+            array[1]=new Agente("pedro","Pepe@gmail.com","chitosis79",null);            
+            array[2]=new Cliente("Juan","jaunillo@gmail.com","extasis",null);
+            array[4]=new Agente("Luis","luis@gmail.com","amoamlo69",null);
             for(int i=0;i<5;i++){
                tablaCuentas.add(array[i]); 
             }
-            
+            */
         }
 	
 	//Las tablas seran arraylist por lo mientras
@@ -48,29 +49,22 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
             file.close(); 
               
             System.out.println("Tabla de Cuentas ha sido cargada."); 
-			try {
+	    try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(ProxyBDAutentificacion.class.getName()).log(Level.SEVERE, null, ex);
             }
         } 
           
-        catch(IOException ex) 
+        catch(Exception ex) 
         { 
-            System.out.println("IOException is caught"); 
+            System.out.println("Error al cargar la BD"); 
         } 
-          
-        catch(ClassNotFoundException ex) 
-        { 
-            System.out.println("ClassNotFoundException is caught"); 
-        } 
-            return nueva;
-	}
-	
+            return null;
+    }
 	//serializa el objeto
 	public void GuardarBD(ArrayList<Cuenta> Tabla){
-		try
-        {    
+	   try{    
             //Saving of object in a file 
             FileOutputStream file = new FileOutputStream(nombreBD); 
             ObjectOutputStream out = new ObjectOutputStream(file); 
@@ -82,7 +76,7 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
             file.close(); 
               
             System.out.println("Tabla de Cuentas ha sido guardada."); 
-			try {
+	    try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(ProxyBDAutentificacion.class.getName()).log(Level.SEVERE, null, ex);
@@ -127,7 +121,13 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
                         }
                                     return this.tablaCuentas.get(i);
                     }
-                }else return null;
+                }
+            }
+            System.out.println("Cuenta no encontrada!!");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(ProxyBDAutentificacion.class.getName()).log(Level.SEVERE, null, ex);
             }
             return null;
 	}

@@ -10,5 +10,7 @@ package gestores;
  * @author tealflipper
  */
 public class GestorAdministrador {
-    
+    GestorAdministrador(){
+        System.out.println("Gestor Admin");
+    }
 }

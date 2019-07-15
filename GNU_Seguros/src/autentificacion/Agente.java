@@ -9,6 +9,8 @@ package autentificacion;
  *
  * @author tealflipper
  */
-public class Agente {
-    
+public class Agente extends Cuenta{
+    Agente(String nombre,String correo,String contraseña,String id){
+        super(nombre,correo,contraseña,id);
+    }
 }
