@@ -18,4 +18,7 @@ public class Agente {
     public void setNumeroAgente(String num){
       this.numeroAgente = num;
     }
+    public String getNumeroAgente(){
+      return this.numeroAgente;
+    }
 }
