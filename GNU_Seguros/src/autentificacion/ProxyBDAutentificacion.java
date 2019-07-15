@@ -34,7 +34,7 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
 	
 	//Las tablas seran arraylist por lo mientras
 	//Deserializa el objeto
-	public ArrayList<Cuenta> cargarBD(){
+	public void cargarBD(){
 		ArrayList<Cuenta> nueva=null;
 	    try
         {    
@@ -60,17 +60,16 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
         { 
             System.out.println("Error al cargar la BD"); 
         } 
-            return null;
     }
 	//serializa el objeto
-	public void GuardarBD(ArrayList<Cuenta> Tabla){
+	public void GuardarBD(){
 	   try{    
             //Saving of object in a file 
             FileOutputStream file = new FileOutputStream(nombreBD); 
             ObjectOutputStream out = new ObjectOutputStream(file); 
               
             // Method for serialization of object 
-            out.writeObject(Tabla); 
+            out.writeObject(this.tablaCuentas); 
               
             out.close(); 
             file.close(); 
@@ -88,10 +87,7 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
         { 
             System.out.println("IOException is caught"); 
         } 
-		
-            this.tablaCuentas=Tabla;
-                
-	}
+    }
 	
 	public Agente getCuentasAgente(){
             return null;
