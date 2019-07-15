@@ -22,9 +22,9 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
         public ProxyBDAutentificacion(){
             Cuenta[] array=new Cuenta[5];
             array[0]=new Admin("jesus","chuy@gmail.com","hammettLover34",null);
-            array[1]=new Cuenta("pedro","Pepe@gmail.com","chitosis79",null);            
-            array[2]=new Cuenta("Juan","jaunillo@gmail.com","extasis",null);
-            array[4]=new Cuenta("Luis","luis@gmail.com","amoamlo69",null);
+            array[1]=new Agente("pedro","Pepe@gmail.com","chitosis79",null);            
+            array[2]=new Cliente("Juan","jaunillo@gmail.com","extasis",null);
+            array[4]=new Agente("Luis","luis@gmail.com","amoamlo69",null);
             for(int i=0;i<5;i++){
                tablaCuentas.add(array[i]); 
             }
