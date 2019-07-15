@@ -78,6 +78,14 @@ public class GestorPublicoGeneral {
                     System.out.print("Ingresar contraseña: ");
                     contraseña=sc.next();
                     sesion=gestorGen.iniciarSesion(correo,contraseña); 
+                    String tipoCuenta=sesion.getClass().getSimpleName();
+                    if(tipoCuenta=="Admin"){
+                        GestorAdministrador nuevoGestor=new GestorAdministrador();
+                    }else if(tipoCuenta=="Agente"){
+                        GestorAgente nuevoGestor=new GestorAgente();
+                    }else if(tipoCuenta=="Cliente"){
+                        GestorCliente nuevoGestor=new GestorCliente();
+                    }
                     break;
                 case(6):
                   continuar=false;

@@ -9,6 +9,9 @@ package autentificacion;
  *
  * @author tealflipper
  */
-public class Admin {
+public class Admin extends Cuenta {
+    Admin(String nombre,String correo,String contraseña,String id){
+        super(nombre,correo,contraseña,id);
+    }
     
 }
