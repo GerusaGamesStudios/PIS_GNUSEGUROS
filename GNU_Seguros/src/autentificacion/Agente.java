@@ -5,10 +5,21 @@
  */
 package autentificacion;
 
+
 /**
  *
  * @author tealflipper
  */
 public class Agente {
-    
+    private String numeroAgente;
+    private String numero;
+    private int region;
+    private Notificaciones notificacion;
+
+    public void setNumeroAgente(String num){
+      this.numeroAgente = num;
+    }
+    public String getNumeroAgente(){
+      return this.numeroAgente;
+    }
 }
