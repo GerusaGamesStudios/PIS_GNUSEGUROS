@@ -10,5 +10,6 @@ package autentificacion;
  * @author tealflipper
  */
 public class Admin {
-    
+  public String name;
+
 }
