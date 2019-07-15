@@ -16,6 +16,7 @@ public class Agente extends Cuenta{
     }
     private String numeroAgente;
     private String numero;
+    private String telefono;
     private int region;
     private Notificaciones notificacion;
 
@@ -31,4 +32,8 @@ public class Agente extends Cuenta{
     public Int getRegion(){
       return this.region;
     }
+    public String getTelefono(){
+      return this.telefono;
+    }
+
 }

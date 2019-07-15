@@ -20,13 +20,13 @@ public class GestorPublicoGeneral {
     private ProxyBDAutentificacion Tabla_cuentas=new ProxyBDAutentificacion();
     private ArrayList<Cuenta> BD;
     private Scanner sc=new Scanner(System.in);
-    
+
     public Cuenta iniciarSesion(String correo, String contraseña){
         boolean correoVerificado=false;
         correoVerificado=verificarCorreo(correo);
         if(!correoVerificado){
             System.out.println("Correo incorrecto");
-            
+
             //un delay de un segundo
             try {
                 Thread.sleep(1000);
@@ -38,24 +38,22 @@ public class GestorPublicoGeneral {
             return null;
         }else{
             BD=Tabla_cuentas.cargarBD();
-            
+
             return Tabla_cuentas.getCuenta(correo,contraseña);
         }
     }
-    
-    
-    
+
     private boolean verificarCorreo(String correo){
         for(int i=0; i<correo.length();i++){
             if(correo.charAt(i)=='@') return true;
         }
         return false;
     }
-    
-    
-        
+
+
+
     public static void main(String [ ] args){
-        
+
         GestorPublicoGeneral gestorGen=new GestorPublicoGeneral();
         Scanner sc=new Scanner(System.in);
         Cuenta sesion;
@@ -79,7 +77,7 @@ public class GestorPublicoGeneral {
                     correo=sc.next();
                     System.out.print("Ingresar contraseña: ");
                     contraseña=sc.next();
-                    sesion=gestorGen.iniciarSesion(correo,contraseña); 
+                    sesion=gestorGen.iniciarSesion(correo,contraseña);
                     if(sesion!=null){
                         String tipoCuenta=sesion.getClass().getSimpleName();
                         if(tipoCuenta=="Admin"){
@@ -90,14 +88,14 @@ public class GestorPublicoGeneral {
                             GestorCliente nuevoGestor=new GestorCliente();
                         }
                     }
-                        
+
                     break;
                 case(6):
                   continuar=false;
                   break;
               default: break;
-            }  
+            }
         }
-        
+
     }
 }
