@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package autentificacion;
-
+import java.io.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,7 +51,7 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
 			try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(GestorPublicoGeneral.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ProxyBDAutentificacion.class.getName()).log(Level.SEVERE, null, ex);
             }
         } 
           
@@ -64,6 +64,7 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
         { 
             System.out.println("ClassNotFoundException is caught"); 
         } 
+            return nueva;
 	}
 	
 	//serializa el objeto
@@ -84,7 +85,7 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
 			try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(GestorPublicoGeneral.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ProxyBDAutentificacion.class.getName()).log(Level.SEVERE, null, ex);
             }
   
         } 
