@@ -13,7 +13,8 @@ package autentificacion;
 public class Agente extends Cuenta{
     Agente(String nombre,String correo,String contraseña,String id){
         super(nombre,correo,contraseña,id);
-public class Agente {
+    }
+    
     private String numeroAgente;
     private String numero;
     private int region;
