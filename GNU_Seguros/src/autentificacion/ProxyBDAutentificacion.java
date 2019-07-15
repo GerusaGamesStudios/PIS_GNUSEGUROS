@@ -28,7 +28,6 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
             for(int i=0;i<5;i++){
                tablaCuentas.add(array[i]);
             }
-
         }
 
 	//Las tablas seran arraylist por lo mientras
@@ -104,6 +103,7 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
 
 	}
 
+
 	public ArrayList<Cuenta> getCuentasAgentes(){
 		ArrayList<Cuenta> cuentas = this.tablaCuentas;
 		ArrayList<Cuenta> entregar = new ArrayList<Cuenta>();
@@ -115,7 +115,8 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
 		return entregar;
 	}
 
-	
+
+
 	public Cuenta getCuenta(String correo,String contraseña){
 
             for(int i=0;i<this.tablaCuentas.size();i++){

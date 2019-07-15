@@ -10,5 +10,12 @@ package autentificacion;
  * @author tealflipper
  */
 public class Agente {
-    
+    private String numeroAgente;
+    private String numero;
+    private Int region;
+    private Notificaciones notificacion;
+
+    public void setNumeroAgente(String num){
+      this.numeroAgente = num;
+    }
 }

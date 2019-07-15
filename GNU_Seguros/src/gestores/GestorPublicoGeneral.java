@@ -21,12 +21,15 @@ public class GestorPublicoGeneral {
     private ArrayList<Cuenta> BD;
     private Scanner sc=new Scanner(System.in);
 
+
+
     public void visualizarListaPublicaDeAgentes(){
       ArrayList<Cuenta> cuentas = Tabla_cuentas.getCuentasAgentes();
       for (Cuenta Current : cuentas) {
         System.out.println(cuenta.getName());
       }
     }
+    
 
     public Cuenta iniciarSesion(String correo, String contraseña){
         boolean correoVerificado=false;
