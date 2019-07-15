@@ -14,7 +14,7 @@ public class Agente extends Cuenta{
     Agente(String nombre,String correo,String contraseña,String id){
         super(nombre,correo,contraseña,id);
     }
-    
+
     private String numeroAgente;
     private String numero;
     private int region;
@@ -25,5 +25,8 @@ public class Agente extends Cuenta{
     }
     public String getNumeroAgente(){
       return this.numeroAgente;
+    }
+    public void setRegion(Int region){
+      this.region = region;
     }
 }
