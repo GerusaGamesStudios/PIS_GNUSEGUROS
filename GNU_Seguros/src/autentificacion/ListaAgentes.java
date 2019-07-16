@@ -9,6 +9,6 @@ package autentificacion;
  *
  * @author tealflipper
  */
-public class ListaAgentes {
+public class ListaAgentes implements java.io.Serializable {
     
 }

@@ -9,6 +9,6 @@ package pago;
  *
  * @author tealflipper
  */
-public class Pago {
+public class Pago implements java.io.Serializable {
     
 }

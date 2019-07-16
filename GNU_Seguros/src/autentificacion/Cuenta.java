@@ -9,7 +9,7 @@ package autentificacion;
  *
  * @author tealflipper
  */
-public class Cuenta {
+public class Cuenta implements java.io.Serializable{
 	private String nombre;
 	private String correo;
 	private String contraseña;
