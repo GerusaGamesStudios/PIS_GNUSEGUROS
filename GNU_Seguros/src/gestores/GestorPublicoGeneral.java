@@ -23,8 +23,19 @@ public class GestorPublicoGeneral {
     
     private Scanner sc=new Scanner(System.in);
     public void setup(){
+        /*
+        Cuenta[] array=new Cuenta[5];
+            array[0]=new Admin("jesus","chuy@gmail.com","hammettLover34",null);
+            array[1]=new Agente("pedro","Pepe@gmail.com","chitosis79",null);            
+            array[2]=new Cliente("Juan","jaunillo@gmail.com","extasis",null);
+            array[4]=new Agente("Luis","luis@gmail.com","amoamlo69",null);
+            for(int i=0;i<5;i++){
+               Tabla_cuentas.addCuenta(array[i]); 
+            }
+        
         Tabla_cuentas.GuardarBD();
         Tabla_info.GuardarBD();
+        */
     }
     public Cuenta iniciarSesion(String correo, String contraseña){
         boolean correoVerificado=false;
@@ -156,6 +167,7 @@ public class GestorPublicoGeneral {
                         String tipoCuenta=sesion.getClass().getSimpleName();
                         if(tipoCuenta.compareTo("Admin")==0){
                             GestorAdministrador nuevoGestor=new GestorAdministrador();
+                            nuevoGestor.mostrar();
                         }else if(tipoCuenta.compareTo("Agente")==0){
                             GestorAgente nuevoGestor=new GestorAgente();
                         }else if(tipoCuenta.compareTo("Cliente")==0){
