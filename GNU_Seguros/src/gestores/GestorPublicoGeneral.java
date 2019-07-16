@@ -6,6 +6,7 @@
 package gestores;
 
 import autentificacion.*;
+import info.ProxyBDInfo;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -18,8 +19,13 @@ import java.util.logging.Logger;
 public class GestorPublicoGeneral {
 
     private ProxyBDAutentificacion Tabla_cuentas=new ProxyBDAutentificacion();
-    private Scanner sc=new Scanner(System.in);
+    private ProxyBDInfo Tabla_info=new ProxyBDInfo();
     
+    private Scanner sc=new Scanner(System.in);
+    public void setup(){
+        Tabla_cuentas.GuardarBD();
+        Tabla_info.GuardarBD();
+    }
     public Cuenta iniciarSesion(String correo, String contraseña){
         boolean correoVerificado=false;
         correoVerificado=verificarCorreo(correo);
@@ -51,13 +57,15 @@ public class GestorPublicoGeneral {
         return false;
     }
     
-    public void consultarComunicado(){
+    public void consultarInformacion(){
+        
         
     }
     
     public static void main(String [ ] args){
         
         GestorPublicoGeneral gestorGen=new GestorPublicoGeneral();
+        gestorGen.setup();
         Scanner sc=new Scanner(System.in);
         Cuenta sesion;
         int opcion;
@@ -92,6 +100,9 @@ public class GestorPublicoGeneral {
                         }
                     }
                         
+                    break;
+                case(2):
+                    
                     break;
                 case(6):
                   continuar=false;

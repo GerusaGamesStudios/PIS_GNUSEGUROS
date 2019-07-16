@@ -127,7 +127,12 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
             }
             return null;
 	}
-	
+	public Cuenta getCuenta(String id){
+            return null;
+        }
+        public Cuenta getCuentaAdmin(){
+            return null;
+        }
 	public void addCuenta(Cuenta nueva){
 		
 	}
@@ -135,4 +140,12 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
 	public void deleteCuenta(Cuenta a_borrar){
 		
 	}
+        
+        public void setNombreBD(String nombre){
+            this.nombreBD=nombre;
+        }
+        
+        public String getNombreBD(){
+            return this.nombreBD;
+        }
 }
