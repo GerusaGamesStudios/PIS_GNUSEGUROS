@@ -9,6 +9,6 @@ package autentificacion;
  *
  * @author tealflipper
  */
-public class Notificaciones {
+public class Notificaciones implements java.io.Serializable {
     
 }

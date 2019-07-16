@@ -9,6 +9,6 @@ package cotizacion;
  *
  * @author tealflipper
  */
-public class Cotizacion {
+public class Cotizacion implements java.io.Serializable {
     
 }
