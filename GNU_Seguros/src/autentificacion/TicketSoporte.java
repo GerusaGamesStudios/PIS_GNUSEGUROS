@@ -17,5 +17,5 @@ public class TicketSoporte {
   public void setTicketSoporte(Bool bol, int index){
     this.ticketsSoporte[index] = bol;
   }
-
+  
 }
