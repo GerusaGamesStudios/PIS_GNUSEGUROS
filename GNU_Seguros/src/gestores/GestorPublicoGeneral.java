@@ -7,6 +7,7 @@
 package gestores;
 
 import autentificacion.*;
+import info.Comunicado;
 import info.ProxyBDInfo;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -126,10 +127,10 @@ public class GestorPublicoGeneral {
         int opcion=0;
         while(opcion!=1){
           Tabla_info.cargarBD();
-          ArrayList<Comunicado> comunicados = tabla_info.getComunicados();
+          ArrayList<Comunicado> comunicados = Tabla_info.getComunicados();
             System.out.println("------Consultar Comunicado------");
-            for(int i= 0;i < comunicados.lenght;i++){
-              System.out.println("Urgencia: "+comunicados[i].getNivelUrgencia().toString() + "CM: " + comunicados[i].getComunicado());
+            for(int i= 0;i < comunicados.size();i++){
+              System.out.println("Urgencia: "+comunicados.get(i).getNivelUrgencia() + "CM: " + comunicados.get(i).getComunicado());
             }
             System.out.println("(1): Regresar");
             opcion=sc.nextInt();
@@ -147,7 +148,7 @@ public class GestorPublicoGeneral {
                 this.consultarBanner();
                 break;
             case (2):
-                this.consultarComunicado();
+                this.consultarComunicados();
                 break;
             case(3):
                 break;
