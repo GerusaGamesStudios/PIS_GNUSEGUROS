@@ -10,5 +10,12 @@ package autentificacion;
  * @author tealflipper
  */
 public class TicketSoporte {
-    
+  private ArrayList<Bool> ticketsSoporte = new ArrayList<Bool>();
+  public ArrayList<Bool> getTicketsSoporte(){
+    return this.ticketsSoporte;
+  }
+  public void setTicketSoporte(Bool bol, int index){
+    this.ticketsSoporte[index] = bol;
+  }
+
 }
