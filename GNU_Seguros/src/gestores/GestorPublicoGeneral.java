@@ -108,18 +108,20 @@ public class GestorPublicoGeneral {
 
     }
     public void consultarComunicado(){
-        Tabla_info.cargarBD();
-        tabla_info.getComunicados();
+
         int opcion=0;
         while(opcion!=1){
+          Tabla_info.cargarBD();
+          ArrayList<Comunicado> comunicados = tabla_info.getComunicados();
             System.out.println("------Consultar Comunicado------");
-            System.out.println("Comunicado\n\n\n\n");
+            for(int i= 0;i < comunicados.lenght;i++){
+              System.out.println("Urgencia: "+comunicados[i].getNivelUrgencia().toString() + "CM: " + comunicados[i].getComunicado());
+            }
             System.out.println("(1): Regresar");
             opcion=sc.nextInt();
         }
     }
     public void consultarInformacion(){
-
         int opcion;
         System.out.println("------Consultar Informacion------");
         System.out.println("(1): Consultar banner");
