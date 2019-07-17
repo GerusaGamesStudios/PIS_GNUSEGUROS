@@ -107,8 +107,7 @@ public class GestorPublicoGeneral {
         }
 
     }
-    public void consultarComunicado(){
-
+    public void consultarComunicados(){
         int opcion=0;
         while(opcion!=1){
           Tabla_info.cargarBD();
