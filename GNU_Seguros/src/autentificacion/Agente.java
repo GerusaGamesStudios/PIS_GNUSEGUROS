@@ -15,12 +15,18 @@ public class Agente extends Cuenta{
     private String numero;
     private int region;
     private Notificaciones notificacion;
+    private String telefono;
 
     public Agente(String nombre,String correo,String contraseña,String id){
         super(nombre,correo,contraseña,id);
     }
 
-
+    public void setTelefono(String tel){
+      this.telefono = tel;
+    }
+    public String getTelefono(){
+      return this.telefono;
+    }
 
     public void setNotificacion( Notificaciones notifi){
       this.notificacion = notifi;
