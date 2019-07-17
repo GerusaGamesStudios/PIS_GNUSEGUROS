@@ -5,6 +5,8 @@
  */
 package info;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author tealflipper
@@ -15,10 +17,11 @@ public class Banner {
     this.galeria.add(str);
   }
   public String getImagen(String str){
-    for(int i = 0 ; i < this.galeria.lenght;i++){
-      if(this.galeria[i] == str){
-        return this.galeria[i];
+    for(int i = 0 ; i < this.galeria.size();i++){
+      if(this.galeria.get(i) == str){
+        return this.galeria.get(i);
       }
     }
+      return null;
   }
 }

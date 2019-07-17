@@ -5,18 +5,21 @@
  */
 package autentificacion;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author tealflipper
  */
 public class TicketSoporte {
   public String prueba;
-  private ArrayList<Bool> ticketsSoporte = new ArrayList<Bool>();
-  public ArrayList<Bool> getTicketsSoporte(){
+  private ArrayList<Boolean> ticketsSoporte = new ArrayList<Boolean>();
+  
+  public ArrayList<Boolean> getTicketsSoporte(){
     return this.ticketsSoporte;
   }
-  public void setTicketSoporte(Bool bol, int index){
-    this.ticketsSoporte[index] = bol;
+  public void setTicketSoporte(Boolean bol, int index){
+    this.ticketsSoporte.set(index,bol);
   }
 
 }

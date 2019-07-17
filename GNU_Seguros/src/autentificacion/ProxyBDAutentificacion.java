@@ -17,9 +17,11 @@ import java.util.logging.Logger;
 public class ProxyBDAutentificacion implements java.io.Serializable {
     //tablaCuentas sera un arraylist por el momento
 	private ArrayList<Cuenta> tablaCuentas=new ArrayList<Cuenta>();
+        private ListaAgentes listaAgentes=new ListaAgentes();
 	private String nombreBD="tablaCuentas.ser";
         
         public ProxyBDAutentificacion(){
+
            
             
             
@@ -80,8 +82,9 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
         } 
     }
 	
-	public Agente getCuentasAgente(){
-            return null;
+	public ListaAgentes getCuentasAgente(){
+            
+            return listaAgentes;
 		
 	}
 	
@@ -118,8 +121,8 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
             }
             return null;
 	}
-	public Cuenta getCuenta(String id){
-            return null;
+	public Cuenta getCuenta(int i){
+            return tablaCuentas.get(i);
         }
         public Cuenta getCuentaAdmin(){
             return null;
@@ -138,5 +141,12 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
         
         public String getNombreBD(){
             return this.nombreBD;
+        }
+        
+        public ArrayList<Cuenta> getTablaCuentas(){
+            return this.tablaCuentas;
+        }
+        public int size(){
+            return this.tablaCuentas.size();
         }
 }

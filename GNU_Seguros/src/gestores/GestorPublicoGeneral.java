@@ -21,10 +21,10 @@ public class GestorPublicoGeneral {
 
     private ProxyBDAutentificacion Tabla_cuentas=new ProxyBDAutentificacion();
     private ProxyBDInfo Tabla_info=new ProxyBDInfo();
-    
+    private ListaAgentes agentes=new ListaAgentes();;
     private Scanner sc=new Scanner(System.in);
     public void setup(){
-        /*
+        
         Cuenta[] array=new Cuenta[5];
             array[0]=new Admin("jesus","chuy@gmail.com","hammettLover34",null);
             array[1]=new Agente("pedro","Pepe@gmail.com","chitosis79",null);            
@@ -36,7 +36,9 @@ public class GestorPublicoGeneral {
         
         Tabla_cuentas.GuardarBD();
         Tabla_info.GuardarBD();
-        */
+        
+        agentes=Tabla_cuentas.getCuentasAgente();
+        
     }
     public Cuenta iniciarSesion(String correo, String contraseña){
         boolean correoVerificado=false;
@@ -70,7 +72,20 @@ public class GestorPublicoGeneral {
     }
     
     public void verLPAgentes(){
-        
+        System.out.println("\n\n\n\n.........Lista Publica de Agentes...........");
+        for(int i=0;i<this.agentes.size();i++){
+            System.out.println("Nombre: "+this.agentes.getAgente(i).getNombre());
+            System.out.println("Correo: "+this.agentes.getAgente(i).getCorreo());
+            System.out.println("Numero de agente: "+this.agentes.getAgente(i).getNumeroAgente());
+            System.out.println("Telefono: "+this.agentes.getAgente(i).getTelefono());
+            System.out.println("Region: "+this.agentes.getAgente(i).getRegion());
+            System.out.println("..............................................");
+        }
+        int op=0;
+        System.out.println("(1): Regresar");
+        while(op!=1){
+            op=sc.nextInt();
+        }
     }
     
     public void visualizarSeguros(){
@@ -171,11 +186,12 @@ public class GestorPublicoGeneral {
                             nuevoGestor.mostrar();
                         }else if(tipoCuenta.compareTo("Agente")==0){
                             GestorAgente nuevoGestor=new GestorAgente();
+                            nuevoGestor.mostrar();
                         }else if(tipoCuenta.compareTo("Cliente")==0){
                             GestorCliente nuevoGestor=new GestorCliente();
+                            nuevoGestor.mostrar();
                         }
                     }
-                        
                     break;
                 case(2):
                     gestorGen.verLPAgentes();
