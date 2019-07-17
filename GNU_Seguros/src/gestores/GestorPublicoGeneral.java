@@ -35,7 +35,7 @@ public class GestorPublicoGeneral {
         
         Tabla_cuentas.GuardarBD();
         Tabla_info.GuardarBD();
-        Tabla_cuentas.cargarBD();
+        
         agentes=Tabla_cuentas.getCuentasAgente();
         
     }
