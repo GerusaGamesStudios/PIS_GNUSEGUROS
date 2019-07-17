@@ -20,6 +20,10 @@ public class Agente extends Cuenta{
     private int region;
     private Notificaciones notificacion;
 
+    public void setNotificacion( Notificaciones notifi){
+      this.notificacion = notifi;
+    }
+
     public void setNumeroAgente(String num){
       this.numeroAgente = num;
     }
