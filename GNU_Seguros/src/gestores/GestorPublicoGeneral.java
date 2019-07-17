@@ -71,7 +71,7 @@ public class GestorPublicoGeneral {
     }
     
     public void verLPAgentes(){
-        
+        System.out.println("\n\n\n\n.........Lista Publica de Agentes...........");
         for(int i=0;i<this.agentes.size();i++){
             System.out.println("Nombre: "+this.agentes.getAgente(i).getNombre());
             System.out.println("Correo: "+this.agentes.getAgente(i).getCorreo());

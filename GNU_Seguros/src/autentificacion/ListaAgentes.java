@@ -15,6 +15,13 @@ public class ListaAgentes implements java.io.Serializable {
     private ArrayList<Agente> agentes = new ArrayList<Agente>();
     public ListaAgentes(){
         
+            Agente[] array=new Agente[5];
+            array[4]=new Agente("Luis","luis@gmail.com","amoamlo69",null);
+            array[1]=new Agente("pedro","Pepe@gmail.com","chitosis79",null); 
+            agentes.add(array[1]);
+            agentes.add(array[4]);
+            
+        
     }
     public void addAgente(Agente nuevo){
         System.out.println("Agente agregado");

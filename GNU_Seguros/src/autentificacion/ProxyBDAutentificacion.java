@@ -21,12 +21,7 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
 	private String nombreBD="tablaCuentas.ser";
         
         public ProxyBDAutentificacion(){
-            for(int i=0;i<tablaCuentas.size();i++){
-                String tipoCuenta=tablaCuentas.get(i).getClass().getSimpleName();
-                if(tipoCuenta.compareTo("Agente")==0){
-                    listaAgentes.addAgente((Agente)tablaCuentas.get(i));
-                }
-            }
+
            
             
             
