@@ -15,10 +15,10 @@ import java.util.logging.Logger;
  * @author tealflipper
  */
 public class ProxyBDInfo {
-    private ArrayList<Info> tablaCuentas=new ArrayList<>();
-	private final String nombreBD="tablaInfo.ser";
+    private ArrayList<Info> tablaInfos=new ArrayList<>();
+    private final String nombreBD="tablaInfo.ser";
         
-        public ProxyBDInfo(){
+    public ProxyBDInfo(){
            
             /*Cuenta[] array=new Cuenta[5];
             array[0]=new Admin("jesus","chuy@gmail.com","hammettLover34",null);
@@ -29,20 +29,20 @@ public class ProxyBDInfo {
                tablaCuentas.add(array[i]); 
             }
             */
-        }
+    }
 	
 	//Las tablas seran arraylist por lo mientras
 	//Deserializa el objeto
-	public void cargarBD(){
-		ArrayList<Info> nueva=null;
-	    try
+    public void cargarBD(){
+	ArrayList<Info> nueva=null;
+        try
         {    
             // Reading the object from a file 
-            FileInputStream file = new FileInputStream(nombreBD); 
+            FileInputStream file = new FileInputStream("tablaInfo.ser"); 
             ObjectInputStream in = new ObjectInputStream(file); 
               
             // Method for deserialization of object 
-            tablaCuentas = (ArrayList<Info>)in.readObject(); 
+            tablaInfos   = (ArrayList<Info>)in.readObject(); 
               
             in.close(); 
             file.close(); 
@@ -53,22 +53,20 @@ public class ProxyBDInfo {
             } catch (InterruptedException ex) {
                 Logger.getLogger(ProxyBDInfo.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } 
-          
-        catch(Exception ex) 
+        }catch(Exception ex) 
         { 
             System.out.println("Error al cargar la BD"); 
         } 
     }
-	//serializa el objeto
-	public void GuardarBD(){
-	   try{    
+    //serializa el objeto
+    public void GuardarBD(){
+        try{    
             //Saving of object in a file 
-            FileOutputStream file = new FileOutputStream(nombreBD); 
+            FileOutputStream file = new FileOutputStream("tablaInfo.ser"); 
             ObjectOutputStream out = new ObjectOutputStream(file); 
               
             // Method for serialization of object 
-            out.writeObject(this.tablaCuentas); 
+            out.writeObject(this.tablaInfos); 
               
             out.close(); 
             file.close(); 
@@ -87,5 +85,26 @@ public class ProxyBDInfo {
         } 
     }
         
+    public ArrayList<Info> getPromosSeguros(){
+        return null;
+    }
+    
+    public ArrayList<Banner> getBanners(){
+        return null;
+    }
+    
+    public ArrayList<Comunicado> getComunicados(){
+        return null;
+    }
+    
+    public Info getInfo(String id){
+        return null;
+    }
+    public void addInfo(Info nueva){
         
+    }
+    
+    public void deleteInfo(String id){
+        
+    }
 }

@@ -9,6 +9,6 @@ package poliza;
  *
  * @author tealflipper
  */
-public class VersionesPoliza {
+public class VersionesPoliza implements java.io.Serializable {
     
 }

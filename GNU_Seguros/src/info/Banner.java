@@ -10,5 +10,15 @@ package info;
  * @author tealflipper
  */
 public class Banner {
-    
+  private ArrayList<String> galeria = new ArrayList<String>();
+  public void setImagen(String str){
+    this.galeria.add(str);
+  }
+  public String getImagen(String str){
+    for(int i = 0 ; i < this.galeria.lenght;i++){
+      if(this.galeria[i] == str){
+        return this.galeria[i];
+      }
+    }
+  }
 }
