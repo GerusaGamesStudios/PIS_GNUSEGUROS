@@ -21,20 +21,13 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
         
         public ProxyBDAutentificacion(){
            
-            /*Cuenta[] array=new Cuenta[5];
-            array[0]=new Admin("jesus","chuy@gmail.com","hammettLover34",null);
-            array[1]=new Agente("pedro","Pepe@gmail.com","chitosis79",null);            
-            array[2]=new Cliente("Juan","jaunillo@gmail.com","extasis",null);
-            array[4]=new Agente("Luis","luis@gmail.com","amoamlo69",null);
-            for(int i=0;i<5;i++){
-               tablaCuentas.add(array[i]); 
-            }
-            */
+            
+            
         }
 	
 	//Las tablas seran arraylist por lo mientras
 	//Deserializa el objeto
-	public ArrayList<Cuenta> cargarBD(){
+	public void cargarBD(){
 		ArrayList<Cuenta> nueva=null;
 	    try
         {    
@@ -60,20 +53,18 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
         { 
             System.out.println("Error al cargar la BD"); 
         } 
-            return null;
     }
 	//serializa el objeto
-	public void GuardarBD(ArrayList<Cuenta> Tabla){
+	public void GuardarBD(){
 	   try{    
             //Saving of object in a file 
             FileOutputStream file = new FileOutputStream(nombreBD); 
             ObjectOutputStream out = new ObjectOutputStream(file); 
               
             // Method for serialization of object 
-            out.writeObject(Tabla); 
+            out.writeObject(this.tablaCuentas); 
               
             out.close(); 
-            file.close(); 
               
             System.out.println("Tabla de Cuentas ha sido guardada."); 
 	    try {
@@ -83,15 +74,11 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
             }
   
         } 
-          
         catch(IOException ex) 
         { 
-            System.out.println("IOException is caught"); 
+            ex.printStackTrace(); 
         } 
-		
-            this.tablaCuentas=Tabla;
-                
-	}
+    }
 	
 	public Agente getCuentasAgente(){
             return null;
@@ -131,12 +118,25 @@ public class ProxyBDAutentificacion implements java.io.Serializable {
             }
             return null;
 	}
-	
+	public Cuenta getCuenta(String id){
+            return null;
+        }
+        public Cuenta getCuentaAdmin(){
+            return null;
+        }
 	public void addCuenta(Cuenta nueva){
-		
+            this.tablaCuentas.add(nueva);
 	}
 	
 	public void deleteCuenta(Cuenta a_borrar){
 		
 	}
+        
+        public void setNombreBD(String nombre){
+            this.nombreBD=nombre;
+        }
+        
+        public String getNombreBD(){
+            return this.nombreBD;
+        }
 }

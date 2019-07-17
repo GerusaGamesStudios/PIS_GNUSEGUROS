@@ -9,6 +9,6 @@ package info;
  *
  * @author tealflipper
  */
-public class Info {
+public class Info implements java.io.Serializable{
     
 }
