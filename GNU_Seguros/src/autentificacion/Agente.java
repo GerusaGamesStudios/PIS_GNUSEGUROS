@@ -13,10 +13,9 @@ package autentificacion;
  */
 public class Agente extends Cuenta{
     private String numeroAgente;
-    private String numero;
+    private String telefono;
     private int region;
     private Notificaciones notificacion;
-    private String telefono;
 
     public Agente(String nombre,String correo,String contraseña,String id){
         super(nombre,correo,contraseña,id);
@@ -39,10 +38,20 @@ public class Agente extends Cuenta{
     public void setNumeroAgente(String num){
       this.numeroAgente = num;
     }
-    public String getNumeroAgente(){
-      return this.numeroAgente;
-    }
     public void setRegion(int region){
       this.region = region;
     }
+    public void setnotificacion(Notificaciones n){
+        this.notificacion=n;
+    }
+    public String getNumeroAgente(){
+      return this.numeroAgente;
+    }
+    public int getRegion(){
+      return this.region;
+    }
+    public Notificaciones get(){
+      return this.notificacion;
+    }
 }
+
