@@ -27,13 +27,13 @@ public class GestorPublicoGeneral {
         
         Cuenta[] array=new Cuenta[5];
             array[0]=new Admin("jesus","chuy@gmail.com","hammettLover34",null);
-            array[1]=new Agente("pedro","Pepe@gmail.com","chitosis79",null);            
+            array[1]=new Agente("pedro","Pepe@gmail.com","chitosis79",null);
             array[2]=new Cliente("Juan","jaunillo@gmail.com","extasis",null);
             array[4]=new Agente("Luis","luis@gmail.com","amoamlo69",null);
             for(int i=0;i<5;i++){
-               Tabla_cuentas.addCuenta(array[i]); 
+               Tabla_cuentas.addCuenta(array[i]);
             }
-        
+
         Tabla_cuentas.GuardarBD();
         Tabla_info.GuardarBD();
         
@@ -45,7 +45,7 @@ public class GestorPublicoGeneral {
         correoVerificado=verificarCorreo(correo);
         if(!correoVerificado){
             System.out.println("Correo incorrecto");
-            
+
             //un delay de un segundo
             try {
                 Thread.sleep(1000);
@@ -57,20 +57,20 @@ public class GestorPublicoGeneral {
             return null;
         }else{
             Tabla_cuentas.cargarBD();
-            
+
             return Tabla_cuentas.getCuenta(correo,contraseña);
         }
     }
-    
-    
-    
+
+
+
     private boolean verificarCorreo(String correo){
         for(int i=0; i<correo.length();i++){
             if(correo.charAt(i)=='@') return true;
         }
         return false;
     }
-    
+
     public void verLPAgentes(){
         System.out.println("\n\n\n\n.........Lista Publica de Agentes...........");
         for(int i=0;i<this.agentes.size();i++){
@@ -87,7 +87,7 @@ public class GestorPublicoGeneral {
             op=sc.nextInt();
         }
     }
-    
+
     public void visualizarSeguros(){
         int opcion=0;
         while(opcion!=1){
@@ -99,7 +99,7 @@ public class GestorPublicoGeneral {
             opcion=sc.nextInt();
         }
     }
-    
+
     public void cotizarSeguro(){
         int opcion=0;
         while(opcion!=1){
@@ -111,7 +111,7 @@ public class GestorPublicoGeneral {
             opcion=sc.nextInt();
         }
     }
-    
+
     public void consultarBanner(){
         int opcion=0;
         while(opcion!=1){
@@ -120,13 +120,17 @@ public class GestorPublicoGeneral {
             System.out.println("(1): Regresar");
             opcion=sc.nextInt();
         }
-        
+
     }
-    public void consultarComunicado(){
+    public void consultarComunicados(){
         int opcion=0;
         while(opcion!=1){
+          Tabla_info.cargarBD();
+          ArrayList<Comunicado> comunicados = tabla_info.getComunicados();
             System.out.println("------Consultar Comunicado------");
-            System.out.println("Comunicado\n\n\n\n");
+            for(int i= 0;i < comunicados.lenght;i++){
+              System.out.println("Urgencia: "+comunicados[i].getNivelUrgencia().toString() + "CM: " + comunicados[i].getComunicado());
+            }
             System.out.println("(1): Regresar");
             opcion=sc.nextInt();
         }
@@ -145,15 +149,15 @@ public class GestorPublicoGeneral {
             case (2):
                 this.consultarComunicado();
                 break;
-            case(3): 
+            case(3):
                 break;
             default:
                 break;
         }
     }
-    
+
     public static void main(String [ ] args){
-        
+
         GestorPublicoGeneral gestorGen=new GestorPublicoGeneral();
         gestorGen.setup();
         Scanner sc=new Scanner(System.in);
@@ -178,7 +182,7 @@ public class GestorPublicoGeneral {
                     correo=sc.next();
                     System.out.print("Ingresar contraseña: ");
                     contraseña=sc.next();
-                    sesion=gestorGen.iniciarSesion(correo,contraseña); 
+                    sesion=gestorGen.iniciarSesion(correo,contraseña);
                     if(sesion!=null){
                         String tipoCuenta=sesion.getClass().getSimpleName();
                         if(tipoCuenta.compareTo("Admin")==0){
@@ -209,8 +213,8 @@ public class GestorPublicoGeneral {
                   continuar=false;
                   break;
               default: break;
-            }  
+            }
         }
-        
+
     }
 }
