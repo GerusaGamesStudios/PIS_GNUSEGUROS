@@ -23,4 +23,8 @@ public class ListaAgentes implements java.io.Serializable {
     }
   }
 
+  public Agente getAgente(int index){
+    return this.ListaAgentes[index];
+  }
+
 }
